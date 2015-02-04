@@ -2,6 +2,7 @@ package ehdotus.controller;
 
 import ehdotus.domain.DifficultyData;
 import ehdotus.repository.DifficultyDataRepository;
+import ehdotus.services.DifficultyEstimatorService;
 import java.util.List;
 import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,16 +17,16 @@ public class DifficultyResolvingController {
     @Autowired
     private DifficultyDataRepository difficultyRepository;
 
+    @Autowired
+    private DifficultyEstimatorService estimatorService;
+
     @RequestMapping(method = RequestMethod.GET)
     public List<DifficultyData> getDifficulties() {
         return difficultyRepository.findAll();
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public DifficultyData estimate(DifficultyData difficulty) {
-        
-        // implement difficulty estimators here
-        difficulty.setEstimatedDifficulty(new Random().nextInt(5) + 1);
-        return difficultyRepository.save(difficulty);
+    public void estimate(DifficultyData difficulty) {
+        estimatorService.estimateDifficulty(difficulty);
     }
 }
