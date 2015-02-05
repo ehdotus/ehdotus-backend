@@ -2,6 +2,7 @@
 package ehdotus.services;
 
 import ehdotus.domain.DifficultyData;
+import ehdotus.estimators.Estimator;
 import ehdotus.repository.DifficultyDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
@@ -16,10 +17,13 @@ public class DifficultyEstimatorService {
     @Autowired 
     private DifficultyDataRepository dataRepository;
     
+    @Autowired
+    private Estimator estimator;
+    
     @Async
     public void estimateDifficulty(DifficultyData data) {
-        // TODO: estimator :D
-        data.setEstimatedDifficulty(4);
+        
+        estimator.estimateDifficulty(data);
         
         // storing difficulty
         data = dataRepository.save(data);
