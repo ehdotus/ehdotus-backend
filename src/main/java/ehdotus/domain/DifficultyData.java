@@ -16,16 +16,15 @@ public class DifficultyData extends AbstractPersistable<Long> {
     private LocalDateTime enteredTime;
     private Integer estimatedDifficulty;
     private Integer realDifficulty;
-    
+    private String userId;
+    private String course;
+    private String exercise;
+
     @ElementCollection
     @MapKeyColumn(name = "name")
     @Column(name = "value")
     @CollectionTable(name = "attributes", joinColumns = @JoinColumn(name = "difficultydata_id"))
     private Map<String, String> content;
-
-    public DifficultyData() {
-        this.enteredTime = LocalDateTime.now();
-    }
 
     public LocalDateTime getEnteredTime() {
         return enteredTime;
@@ -33,14 +32,6 @@ public class DifficultyData extends AbstractPersistable<Long> {
 
     public void setEnteredTime(LocalDateTime enteredTime) {
         this.enteredTime = enteredTime;
-    }
-
-    public Map<String, String> getContent() {
-        return content;
-    }
-
-    public void setContent(Map<String, String> content) {
-        this.content = content;
     }
 
     public Integer getEstimatedDifficulty() {
@@ -57,6 +48,38 @@ public class DifficultyData extends AbstractPersistable<Long> {
 
     public void setRealDifficulty(Integer realDifficulty) {
         this.realDifficulty = realDifficulty;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
+    }
+
+    public String getExercise() {
+        return exercise;
+    }
+
+    public void setExercise(String exercise) {
+        this.exercise = exercise;
+    }
+
+    public Map<String, String> getContent() {
+        return content;
+    }
+
+    public void setContent(Map<String, String> content) {
+        this.content = content;
     }
 
 }
