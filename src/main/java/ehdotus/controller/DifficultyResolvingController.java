@@ -5,6 +5,7 @@ import ehdotus.repository.DifficultyDataRepository;
 import ehdotus.services.DifficultyEstimatorService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,7 +31,7 @@ public class DifficultyResolvingController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public void estimate(DifficultyData difficulty) {
+    public void estimate(@RequestBody DifficultyData difficulty) {
         estimatorService.estimateDifficulty(difficulty);
     }
 }
