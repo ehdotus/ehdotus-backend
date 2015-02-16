@@ -20,6 +20,11 @@ public class DifficultyResolvingController {
     @Autowired
     private DifficultyEstimatorService estimatorService;
 
+    @RequestMapping(value = "clear", method = RequestMethod.GET)
+    public void clear() {
+        difficultyRepository.deleteAll();
+    }
+
     @RequestMapping(method = RequestMethod.GET)
     public List<DifficultyData> getDifficulties() {
         return difficultyRepository.findAll();
