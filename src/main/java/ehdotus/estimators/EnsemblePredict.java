@@ -64,7 +64,7 @@ public class EnsemblePredict {
             }
         }
         
-        data.setEstimatedDifficulty(5 - largestIndex + 1);
+        data.setEstimatedDifficulty(5 - largestIndex);
         return pdf;
     }
 
