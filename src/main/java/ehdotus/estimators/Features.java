@@ -1,12 +1,14 @@
 package ehdotus.estimators;
 
+import ehdotus.domain.DifficultyData;
+
 /**
  * Created by shemmink on 15.2.2015.
  */
 public class Features {
 
 
-    public static double getFeatureValueByName(String featureName) {
+    public static double getFeatureValueByName(DifficultyData data, String featureName) {
 
         FeatureNames feature = FeatureNames.valueOf(featureName.toUpperCase());
 
@@ -62,8 +64,7 @@ public class Features {
         }
 
 
-        return 0;
-
+        return Double.parseDouble(data.getContent().get("SECONDS_SPENT_ON"));
     }
 
 

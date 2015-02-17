@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class EnsemblePredict {
-
+    
     @Autowired
     private ReadClassifiersFromFile classifierReader;
 
@@ -21,7 +21,7 @@ public class EnsemblePredict {
         if (weakClassifiers == null) {
             this.weakClassifiers = this.classifierReader.loadClassifiers();
         }
-
+        
         int ensembleSize = WeakClassifier.ensembleSize();
         int classCount = WeakClassifier.getClassNames().length;
         double[] pdfWeightSum = new double[classCount];
@@ -32,7 +32,7 @@ public class EnsemblePredict {
         for (int i = 0; i < ensembleSize; i++) {
 
             // Get classification from a weak classifier
-            double[] weakPdf = getWeakClassification(weakClassifiers[i]);
+            double[] weakPdf = getWeakClassification(data, weakClassifiers[i]);
             double weight = weakClassifiers[i].getWeight();
             weightSum += weight;
 
@@ -40,7 +40,7 @@ public class EnsemblePredict {
             for (int j = 0; j < classCount; j++) {
                 pdfWeightSum[j] += weakPdf[j] * weight;
             }
-
+            
         }
 
         // Normalize
@@ -55,8 +55,16 @@ public class EnsemblePredict {
         }
 
         // do something with the real value
-        String secondsSpentOn = data.getContent().get("SECONDS_SPENT_ON");
+        double largest = -1;
+        int largestIndex = -1;
+        for (int i = 0; i < pdf.length; i++) {
+            if (pdf[i] > largest) {
+                largest = pdf[i];
+                largestIndex = i;
+            }
+        }
         
+        data.setEstimatedDifficulty(largestIndex + 1);
         return pdf;
     }
 
@@ -66,17 +74,17 @@ public class EnsemblePredict {
     }
 
     // Return classification result(pdf) from a weakClassifier
-    private double[] getWeakClassification(WeakClassifier weakClassifier) {
-
+    private double[] getWeakClassification(DifficultyData data, WeakClassifier weakClassifier) {
+        
         String featureName = weakClassifier.getFeatureName();
         double[] pdf = new double[3];
-        double featureValue = Features.getFeatureValueByName(featureName);
-
+        double featureValue = Features.getFeatureValueByName(data, featureName);
+        
         if (featureValue > weakClassifier.getCutPoint()) {
             return weakClassifier.getRightBranch();
         } else {
             return weakClassifier.getLeftBranch();
         }
-
+        
     }
 }
