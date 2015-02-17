@@ -12,7 +12,7 @@ public class EnsemblePredict {
     public double[] classify() {
 
         if (weakClassifiers == null) {
-            Log.d("EnsemblePredict", "WeakClassifiers not set, returning null");
+            // Log.d("EnsemblePredict", "WeakClassifiers not set, returning null");
             return null;
         }
 
