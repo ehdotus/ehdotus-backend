@@ -121,9 +121,7 @@ var data = {
         //var r = Raphael(0, 0, width, height);
         var users_diff = {};
         var users_est = {};
-        
-        
- 
+        var exercises = [];
      // Get the context of the canvas element we want to select
      var ctx = document.getElementById("myChart").getContext("2d");
     ctx.canvas.width = width*0.1;
@@ -134,10 +132,6 @@ var data = {
         // Creates pie chart at with center at 320, 200,
         // radius 100 and data: [55, 20, 13, 32, 5, 1, 2]
         //r.piechart(320, 240, 100, [95, 20, 13, 32, 5, 1, 2]);
-
-        
-          
-            
                 var path = "http://ehdotus.herokuapp.com";
 //                var path = "http://localhost:8080";
 					//$.get(path + "/difficulty", function(res) {
@@ -145,6 +139,10 @@ var data = {
 		                   // alert(res);
 		                   
 						$.each(res, function(index, item) {
+							if($.inArray(item.exercise, exercises)==-1){
+								exercises.push(item.exercise);
+							}
+						
 	                    	if(item.userId in users_diff){
 	                    		users_diff[item.userId].push(item.realDifficulty)
 	                    	}
@@ -172,9 +170,8 @@ var data = {
 				          userset["pointHighlightStroke"]= "rgba(220,220,220,1)";
 			            //console.log(userset);
 			              data["datasets"].push(userset);
-			              console.log(data);
-			                	// console.log( key + ": " + value );
 			                	});
+						   data["labels"] = exercises;
 							var myLineChart = new Chart(ctx).Line(data, options);
 						   //$.map(Array(8), function(){ return 1; })
 						 //r.linechart(0, 0, 0.85*width, 0.85*height, [1,2,3,4,5], [[1,2,3,4,5], [1,3,9,16,25], [100,50,25,12,6]], {smooth: true, colors: ['#F00', '#0F0', '#FF0'], symbol: ''});
