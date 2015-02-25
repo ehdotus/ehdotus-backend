@@ -135,15 +135,14 @@
 
                     var sum = 0;
 
-                    $.each(exerciseLabels, function (val) {
-                        
-                        if (!entry.difficulties[val]) {
+                    $.each(exerciseLabels, function (index, exerciseLabel) {
+                        if (!entry.difficulties[exerciseLabel]) {
                             values.push(null);
                             return;
                         }
 
-                        sum += entry.difficulties[val].difficulty;
-                        values.push(entry.difficulties[val].difficulty);
+                        sum += entry.difficulties[exerciseLabel].difficulty;
+                        values.push(entry.difficulties[exerciseLabel].difficulty);
                     });
 
                     if (values.length < 1) {
