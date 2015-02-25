@@ -1,205 +1,238 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Ehdotin</title>
-<meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<style>
-body {
-	margin: 0;
-}
+    <head>
+        <title>Ehdotin</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            body {
+                margin: 0;
+            }
 
-</style>
+        </style>
 
-<!--  //canvas {
-//	width: 50%;
-//	height: 50%;
-//}-->
-</head>
-<body>
+        <!--  //canvas {
+        //	width: 50%;
+        //	height: 50%;
+        //}-->
+    </head>
+    <body>
 
-	<div id="content"></div>
-
-
-	<div id="visu"></div>
-
-<!-- <script src="js/raphael.js"></script> -->
-<!-- 	<script src="js/g.raphael-min.js"></script> -->
-	<script src="js/jquery.min.js"></script>
-<!-- 	<script src="js/three.js"></script> -->
-	<script src="js/sockjs.min.js"></script>
-	<script src="js/stomp.min.js"></script>
-<!-- 	<script src="js/g.bar-min.js"></script> -->
-<!-- 	<script src="js/g.dot-min.js"></script> -->
-<!-- 	<script src="js/g.line-min.js"></script> -->
-<!-- 	<script src="js/g.pie-min.js"></script> -->
-	<script src="js/Chart.js"></script>
-
-        <canvas id="myChart" width="40" height="40"></canvas>
-	<script>
-            $(document).ready(function () {
-            	//$(window).resize(function () { window.location.reload() });
-                // Creates canvas 640 × 480 at 10, 50
-                
-
-var data = {
-							    labels: ["Exercise1","Exercise2","Exercise3"],
-							    datasets: []
-// 							        {
-// 							            label: "My First dataset",
-// 							            fillColor: "rgba(220,220,220,0.2)",
-// 							            strokeColor: "rgba(220,220,220,1)",
-// 							            pointColor: "rgba(220,220,220,1)",
-// 							            pointStrokeColor: "#fff",
-// 							            pointHighlightFill: "#fff",
-// 							            pointHighlightStroke: "rgba(220,220,220,1)",
-// 							            data: [65, 59, 80, 81, 56, 55, 40]
-// 							        },
-// 							        {
-// 							            label: "My Second dataset",
-// 							            fillColor: "rgba(151,187,205,0.2)",
-// 							            strokeColor: "rgba(151,187,205,1)",
-// 							            pointColor: "rgba(151,187,205,1)",
-// 							            pointStrokeColor: "#fff",
-// 							            pointHighlightFill: "#fff",
-// 							            pointHighlightStroke: "rgba(151,187,205,1)",
-// 							            data: [28, 48, 40, 19, 86, 27, 90]
-// 							        }
-// 							    ]
-							};
-						var options = {
-
-							    ///Boolean - Whether grid lines are shown across the chart
-							    scaleShowGridLines : true,
-
-							    //String - Colour of the grid lines
-							    scaleGridLineColor : "rgba(0,0,0,.05)",
-
-							    //Number - Width of the grid lines
-							    scaleGridLineWidth : 1,
-
-							    //Boolean - Whether to show horizontal lines (except X axis)
-							    scaleShowHorizontalLines: true,
-
-							    //Boolean - Whether to show vertical lines (except Y axis)
-							    scaleShowVerticalLines: true,
-
-							    //Boolean - Whether the line is curved between points
-							    bezierCurve : true,
-
-							    //Number - Tension of the bezier curve between points
-							    bezierCurveTension : 0.4,
-
-							    //Boolean - Whether to show a dot for each point
-							    pointDot : true,
-
-							    //Number - Radius of each point dot in pixels
-							    pointDotRadius : 4,
-
-							    //Number - Pixel width of point dot stroke
-							    pointDotStrokeWidth : 1,
-
-							    //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
-							    pointHitDetectionRadius : 20,
-
-							    //Boolean - Whether to show a stroke for datasets
-							    datasetStroke : true,
-
-							    //Number - Pixel width of dataset stroke
-							    datasetStrokeWidth : 2,
-
-							    //Boolean - Whether to fill the dataset with a colour
-							    datasetFill : true,
-
-							    //String - A legend template
-							    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
-
-							};
-
-        var width = $(document).width();
-        var height =$(document).height();
-        //var r = Raphael(0, 0, width, height);
-        var users_diff = {};
-        var users_est = {};
-        var exercises = [];
-     // Get the context of the canvas element we want to select
-     var ctx = document.getElementById("myChart").getContext("2d");
-    ctx.canvas.width = width*0.1;
-     ctx.canvas.height = height*0.1;
-     
-     
-
-        // Creates pie chart at with center at 320, 200,
-        // radius 100 and data: [55, 20, 13, 32, 5, 1, 2]
-        //r.piechart(320, 240, 100, [95, 20, 13, 32, 5, 1, 2]);
-               var path = "http://ehdotus.herokuapp.com";
- //               var path = "http://localhost:8080";
-					//$.get(path + "/difficulty", function(res) {
-						$.ajax({url:path + "/difficulty", ajax:false}).done(function(res) {
-		                   // alert(res);
-		                   
-						$.each(res, function(index, item) {
-							if($.inArray(item.exercise, exercises)==-1){
-								exercises.push(item.exercise);
-							}
-						
-	                    	if(item.userId in users_diff){
-	                    		users_diff[item.userId].push(item.realDifficulty)
-	                    	}
-	                    	else{
-	                    		users_diff[item.userId] = [item.realDifficulty];
-	                    	}
-	                    	if(item.userId in users_est){
-	                    		users_est[item.userId].push(item.estimatedDifficulty)
-	                    	}
-	                    	else{
-	                    		users_est[item.userId] = [item.estimatedDifficulty];
-	                    	}
-	                    });
-						
-						   $.each(users_diff, function( key, value ) {
-			              //  	alert('we went here!');
-			              userset = {};
-			              userset["label"] = key;
-			              userset["data"] = value;
-				           userset["fillColor"]= "rgba(220,220,220,0.2)";
-				           userset["strokeColor"]= "rgba(220,220,220,1)";
-				           userset["pointColor"]="rgba(220,220,220,1)";
-				           userset["pointStrokeColor"]= "#fff";
-				          userset["pointHighlightFill"]= "#fff";
-				          userset["pointHighlightStroke"]= "rgba(220,220,220,1)";
-			            //console.log(userset);
-			              data["datasets"].push(userset);
-			                	});
-						   
-						   data["labels"] = exercises;
-							var myLineChart = new Chart(ctx).Line(data, options);
-						   //$.map(Array(8), function(){ return 1; })
-						 //r.linechart(0, 0, 0.85*width, 0.85*height, [1,2,3,4,5], [[1,2,3,4,5], [1,3,9,16,25], [100,50,25,12,6]], {smooth: true, colors: ['#F00', '#0F0', '#FF0'], symbol: ''});
-		                });
-					
-						
-						
-						Chart.defaults.global.responsive = true;
+        <div id="content"></div>
 
 
-				//console.log(users_diff);
-               
-                var sock = new SockJS(path + "/ws");
-                var client = Stomp.over(sock);
+        <div id="visu"></div>
 
-                client.connect({}, function (response) {
-                    client.subscribe("/results", function (msg) {
-                        var difficultyData = JSON.parse(msg.body);
-                       
-                        $("#content").html("<p>diff: " + difficultyData.realDifficulty + ", estimated: " + difficultyData.estimatedDifficulty + "</p>");
+        <!-- <script src="js/raphael.js"></script> -->
+        <!-- 	<script src="js/g.raphael-min.js"></script> -->
+        <script src="js/jquery.min.js"></script>
+        <!-- 	<script src="js/three.js"></script> -->
+        <script src="js/sockjs.min.js"></script>
+        <script src="js/stomp.min.js"></script>
+        <!-- 	<script src="js/g.bar-min.js"></script> -->
+        <!-- 	<script src="js/g.dot-min.js"></script> -->
+        <!-- 	<script src="js/g.line-min.js"></script> -->
+        <!-- 	<script src="js/g.pie-min.js"></script> -->
+        <script src="js/Chart.js"></script>
+
+        <canvas id="myChart" width="640" height="480"></canvas>
+
+        <script>
+            var path = "http://ehdotus.herokuapp.com";
+            var superiorChart; // you know, it's better than the others.
+            var exerciseLabels = [];
+            var userData = {};
+
+            var printingOptions = {
+                responsive: true,
+                ///Boolean - Whether grid lines are shown across the chart
+                scaleShowGridLines: true,
+                //String - Colour of the grid lines
+                scaleGridLineColor: "rgba(0,0,0,.05)",
+                //Number - Width of the grid lines
+                scaleGridLineWidth: 1,
+                //Boolean - Whether to show horizontal lines (except X axis)
+                scaleShowHorizontalLines: true,
+                //Boolean - Whether to show vertical lines (except Y axis)
+                scaleShowVerticalLines: true,
+                //Boolean - Whether the line is curved between points
+                bezierCurve: true,
+                //Number - Tension of the bezier curve between points
+                bezierCurveTension: 0.4,
+                //Boolean - Whether to show a dot for each point
+                pointDot: true,
+                //Number - Radius of each point dot in pixels
+                pointDotRadius: 4,
+                //Number - Pixel width of point dot stroke
+                pointDotStrokeWidth: 1,
+                //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+                pointHitDetectionRadius: 20,
+                //Boolean - Whether to show a stroke for datasets
+                datasetStroke: true,
+                //Number - Pixel width of dataset stroke
+                datasetStrokeWidth: 2,
+                //Boolean - Whether to fill the dataset with a colour
+                datasetFill: false,
+                //String - A legend template
+                legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+            };
+
+            function addDifficultyData(item) {                
+                if ($.inArray(item.exercise, exerciseLabels) === -1) {
+                    exerciseLabels.push(item.exercise);
+                }
+
+                if (!userData[item.userId]) {
+                    userData[item.userId] = {};
+                    userData[item.userId].difficulties = {};
+                }
+
+                var diff = item.estimatedDifficulty;
+                if (item.realDifficulty) {
+                    diff = item.realDifficulty;
+                }
+
+                var entry = {
+                    exercise: item.exercise,
+                    difficulty: diff,
+                    estimated: item.realDifficulty === null
+                };
+
+                userData[item.userId].difficulties[item.exercise] = entry;
+            }
+
+            function invokePaint() {
+                console.log("paint invoked");
+                if (superiorChart) {
+                    console.log("previous painting exists, removing it before continuing");
+                    superiorChart.destroy();
+                }
+
+                exerciseLabels.sort();
+
+                console.log("total " + Object.keys(userData).length + " users with data.");
+
+                var data = {
+                    labels: ["Exercise1", "Exercise2", "Exercise3"],
+                    datasets: []
+                };
+
+                var width = $(document).width();
+                var height = $(document).height();
+
+                var ctx = document.getElementById("myChart").getContext("2d");
+                ctx.canvas.width = width * 0.9;
+                ctx.canvas.height = height * 0.9;
+
+                console.log("transforming user data into printable format");
+
+                counter = 0;
+
+                $.each(userData, function (key, entry) {
+
+
+                    var values = [];
+
+                    var sum = 0;
+
+                    $.each(exerciseLabels, function (val) {
+                        
+                        if (!entry.difficulties[val]) {
+                            values.push(null);
+                            return;
+                        }
+
+                        sum += entry.difficulties[val].difficulty;
+                        values.push(entry.difficulties[val].difficulty);
                     });
+
+                    if (values.length < 1) {
+                        console.log("count was small, let's not show");
+                        return;
+                    }
+
+
+//                    counter++;
+//
+//                    if (counter > 40) {
+//                        return;
+//                    }
+
+                    var avgdiff = sum / values.length;
+
+                    var userset = {};
+                    userset["label"] = key;
+                    console.log(key);
+                    console.log(values);
+                    console.log("---");
+                    userset["data"] = values;
+
+                    var rgb = "220,220,220";
+
+                    if (avgdiff > 3) {
+                        console.log(key + " has pretty high avg diff");
+                        rgb = "204,0,0";
+                    } else if (avgdiff < 1.5) {
+                        console.log(key + " has pretty low avg diff");
+                        rgb = "0,204,0";
+                    }
+
+                    userset["fillColor"] = "rgba(" + rgb + ",0.2)";
+                    userset["strokeColor"] = "rgba(" + rgb + ",1)";
+                    userset["pointColor"] = "rgba(" + rgb + ",1)";
+                    userset["pointStrokeColor"] = "#fff";
+                    userset["pointHighlightFill"] = "#fff";
+                    userset["pointHighlightStroke"] = "rgba(" + rgb + ",1)";
+
+                    data["datasets"].push(userset);
+                });
+
+                console.log("transformation done");
+
+                console.log("total " + Object.keys(data["datasets"]).length + " datasets to visualize.");
+                console.log("generating chart");
+                console.log(exerciseLabels);
+                data["labels"] = exerciseLabels;
+                superiorChart = new Chart(ctx).Line(data, printingOptions);
+                console.log("it is visible!");
+            }
+
+            $(document).ready(function () {
+                console.log("document ready, retrieving data");
+
+                $.ajax({url: path + "/difficulty"}).done(function (res) {
+                    console.log("data received, parsing");
+
+                    $.each(res, function (index, item) {
+                        addDifficultyData(item);
+                    });
+                    console.log("parsing done, invoking paint");
+
+                    invokePaint();
+                });
+
+            });
+
+            var sock = new SockJS(path + "/ws");
+            var client = Stomp.over(sock);
+
+            client.connect({}, function (response) {
+                client.subscribe("/results", function (msg) {
+                    var difficultyData = JSON.parse(msg.body);
+                    addDifficultyData(difficultyData);
+
+                    $("#content").html("<p>new entry! -- diff: " + difficultyData.realDifficulty + ", estimated: " + difficultyData.estimatedDifficulty + "</p>");
+                    invokePaint();
+//
+//                    console.log("updating");
+//                    console.log(difficultyData);
+//                    superiorChart.update();
                 });
             });
         </script>
 
-	<!--  script src="ehdotin.js"></script-->
-	<!--script>
+        <!--  script src="ehdotin.js"></script-->
+        <!--script>
 
             var gfx = new EhdotinGfx();
             gfx.init();
@@ -214,5 +247,5 @@ var data = {
 
         </script-->
 
-</body>
+    </body>
 </html>
