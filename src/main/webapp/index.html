@@ -132,8 +132,8 @@ var data = {
         // Creates pie chart at with center at 320, 200,
         // radius 100 and data: [55, 20, 13, 32, 5, 1, 2]
         //r.piechart(320, 240, 100, [95, 20, 13, 32, 5, 1, 2]);
-                var path = "http://ehdotus.herokuapp.com";
-//                var path = "http://localhost:8080";
+               var path = "http://ehdotus.herokuapp.com";
+ //               var path = "http://localhost:8080";
 					//$.get(path + "/difficulty", function(res) {
 						$.ajax({url:path + "/difficulty", ajax:false}).done(function(res) {
 		                   // alert(res);
@@ -171,6 +171,7 @@ var data = {
 			            //console.log(userset);
 			              data["datasets"].push(userset);
 			                	});
+						   
 						   data["labels"] = exercises;
 							var myLineChart = new Chart(ctx).Line(data, options);
 						   //$.map(Array(8), function(){ return 1; })

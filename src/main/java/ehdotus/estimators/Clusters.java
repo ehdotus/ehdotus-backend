@@ -1,6 +1,13 @@
 package ehdotus.estimators;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
 
 /**
  * Created by shemmink on 25.2.2015.
