@@ -1,0 +1,636 @@
+{
+"version" : 0.1,
+"PDF_Offset" : 0,
+"trees" : [
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 674.44,
+"weight" :0.07056,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3746,
+"Difficulty 2" :  0.2798,
+"Difficulty 3" : 0.1849,
+"Difficulty 4" : 0.0801,
+"Difficulty 5" : 0.0806
+},
+"right" : {
+"Difficulty 1" : 0.05029,
+"Difficulty 2" : 0.1315,
+"Difficulty 3" : 0.213,
+"Difficulty 4" : 0.3028,
+"Difficulty 5" : 0.3024
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 674.44,
+"weight" :0.06798,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.371,
+"Difficulty 2" :  0.2795,
+"Difficulty 3" : 0.1862,
+"Difficulty 4" : 0.08141,
+"Difficulty 5" : 0.08193
+},
+"right" : {
+"Difficulty 1" : 0.05117,
+"Difficulty 2" : 0.1329,
+"Difficulty 3" : 0.2136,
+"Difficulty 4" : 0.3014,
+"Difficulty 5" : 0.3009
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 674.44,
+"weight" :0.06557,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3676,
+"Difficulty 2" :  0.2791,
+"Difficulty 3" : 0.1874,
+"Difficulty 4" : 0.08268,
+"Difficulty 5" : 0.0832
+},
+"right" : {
+"Difficulty 1" : 0.05203,
+"Difficulty 2" : 0.1342,
+"Difficulty 3" : 0.2142,
+"Difficulty 4" : 0.3,
+"Difficulty 5" : 0.2996
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 674.44,
+"weight" :0.06331,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3644,
+"Difficulty 2" :  0.2787,
+"Difficulty 3" : 0.1886,
+"Difficulty 4" : 0.0839,
+"Difficulty 5" : 0.08442
+},
+"right" : {
+"Difficulty 1" : 0.05286,
+"Difficulty 2" : 0.1354,
+"Difficulty 3" : 0.2148,
+"Difficulty 4" : 0.2986,
+"Difficulty 5" : 0.2982
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 674.44,
+"weight" :0.06119,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3614,
+"Difficulty 2" :  0.2783,
+"Difficulty 3" : 0.1896,
+"Difficulty 4" : 0.08508,
+"Difficulty 5" : 0.0856
+},
+"right" : {
+"Difficulty 1" : 0.05367,
+"Difficulty 2" : 0.1366,
+"Difficulty 3" : 0.2153,
+"Difficulty 4" : 0.2974,
+"Difficulty 5" : 0.297
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 674.44,
+"weight" :0.0592,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3585,
+"Difficulty 2" :  0.2779,
+"Difficulty 3" : 0.1907,
+"Difficulty 4" : 0.08621,
+"Difficulty 5" : 0.08674
+},
+"right" : {
+"Difficulty 1" : 0.05445,
+"Difficulty 2" : 0.1378,
+"Difficulty 3" : 0.2158,
+"Difficulty 4" : 0.2962,
+"Difficulty 5" : 0.2958
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 674.44,
+"weight" :0.05732,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3558,
+"Difficulty 2" :  0.2775,
+"Difficulty 3" : 0.1916,
+"Difficulty 4" : 0.08731,
+"Difficulty 5" : 0.08784
+},
+"right" : {
+"Difficulty 1" : 0.05522,
+"Difficulty 2" : 0.1388,
+"Difficulty 3" : 0.2163,
+"Difficulty 4" : 0.295,
+"Difficulty 5" : 0.2947
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 746.71,
+"weight" :0.05589,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3359,
+"Difficulty 2" :  0.278,
+"Difficulty 3" : 0.199,
+"Difficulty 4" : 0.09531,
+"Difficulty 5" : 0.09173
+},
+"right" : {
+"Difficulty 1" : 0.05214,
+"Difficulty 2" : 0.1293,
+"Difficulty 3" : 0.2121,
+"Difficulty 4" : 0.3014,
+"Difficulty 5" : 0.305
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 644.16,
+"weight" :0.05416,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3562,
+"Difficulty 2" :  0.2775,
+"Difficulty 3" : 0.1907,
+"Difficulty 4" : 0.08334,
+"Difficulty 5" : 0.09225
+},
+"right" : {
+"Difficulty 1" : 0.05868,
+"Difficulty 2" : 0.1429,
+"Difficulty 3" : 0.2187,
+"Difficulty 4" : 0.2935,
+"Difficulty 5" : 0.2862
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 746.71,
+"weight" :0.05278,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3317,
+"Difficulty 2" :  0.2772,
+"Difficulty 3" : 0.2004,
+"Difficulty 4" : 0.09711,
+"Difficulty 5" : 0.09361
+},
+"right" : {
+"Difficulty 1" : 0.05351,
+"Difficulty 2" : 0.1313,
+"Difficulty 3" : 0.213,
+"Difficulty 4" : 0.2993,
+"Difficulty 5" : 0.3029
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 644.16,
+"weight" :0.05118,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3518,
+"Difficulty 2" :  0.2766,
+"Difficulty 3" : 0.1922,
+"Difficulty 4" : 0.08516,
+"Difficulty 5" : 0.09423
+},
+"right" : {
+"Difficulty 1" : 0.05995,
+"Difficulty 2" : 0.1447,
+"Difficulty 3" : 0.2195,
+"Difficulty 4" : 0.2915,
+"Difficulty 5" : 0.2843
+}
+}
+},
+{
+"feature" : "SECONDS_IN_NONCOMPILE",
+"threshold" : 461.65,
+"weight" :0.05167,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.2855,
+"Difficulty 2" :  0.2645,
+"Difficulty 3" : 0.2177,
+"Difficulty 4" : 0.1278,
+"Difficulty 5" : 0.1045
+},
+"right" : {
+"Difficulty 1" : 0.03259,
+"Difficulty 2" : 0.1045,
+"Difficulty 3" : 0.1916,
+"Difficulty 4" : 0.3162,
+"Difficulty 5" : 0.3551
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 746.71,
+"weight" :0.04906,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3267,
+"Difficulty 2" :  0.2759,
+"Difficulty 3" : 0.202,
+"Difficulty 4" : 0.0994,
+"Difficulty 5" : 0.09602
+},
+"right" : {
+"Difficulty 1" : 0.05506,
+"Difficulty 2" : 0.1337,
+"Difficulty 3" : 0.2145,
+"Difficulty 4" : 0.2969,
+"Difficulty 5" : 0.2998
+}
+}
+},
+{
+"feature" : "SECONDS_IN_NONCOMPILE",
+"threshold" : 461.65,
+"weight" :0.0494,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.2833,
+"Difficulty 2" :  0.2637,
+"Difficulty 3" : 0.2182,
+"Difficulty 4" : 0.1291,
+"Difficulty 5" : 0.1057
+},
+"right" : {
+"Difficulty 1" : 0.03346,
+"Difficulty 2" : 0.1063,
+"Difficulty 3" : 0.1931,
+"Difficulty 4" : 0.3147,
+"Difficulty 5" : 0.3524
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 644.16,
+"weight" :0.04681,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3456,
+"Difficulty 2" :  0.2748,
+"Difficulty 3" : 0.194,
+"Difficulty 4" : 0.08802,
+"Difficulty 5" : 0.09765
+},
+"right" : {
+"Difficulty 1" : 0.06154,
+"Difficulty 2" : 0.1474,
+"Difficulty 3" : 0.2216,
+"Difficulty 4" : 0.2892,
+"Difficulty 5" : 0.2803
+}
+}
+},
+{
+"feature" : "SECONDS_IN_NONCOMPILE",
+"threshold" : 461.65,
+"weight" :0.04733,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.281,
+"Difficulty 2" :  0.263,
+"Difficulty 3" : 0.2188,
+"Difficulty 4" : 0.1302,
+"Difficulty 5" : 0.107
+},
+"right" : {
+"Difficulty 1" : 0.03428,
+"Difficulty 2" : 0.108,
+"Difficulty 3" : 0.1945,
+"Difficulty 4" : 0.3131,
+"Difficulty 5" : 0.3501
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 746.71,
+"weight" :0.04499,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3213,
+"Difficulty 2" :  0.2743,
+"Difficulty 3" : 0.2035,
+"Difficulty 4" : 0.1021,
+"Difficulty 5" : 0.09884
+},
+"right" : {
+"Difficulty 1" : 0.05674,
+"Difficulty 2" : 0.1365,
+"Difficulty 3" : 0.2165,
+"Difficulty 4" : 0.2944,
+"Difficulty 5" : 0.2958
+}
+}
+},
+{
+"feature" : "SECONDS_IN_NONCOMPILE",
+"threshold" : 461.65,
+"weight" :0.04539,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.2791,
+"Difficulty 2" :  0.2623,
+"Difficulty 3" : 0.2192,
+"Difficulty 4" : 0.1313,
+"Difficulty 5" : 0.1082
+},
+"right" : {
+"Difficulty 1" : 0.0351,
+"Difficulty 2" : 0.1097,
+"Difficulty 3" : 0.1958,
+"Difficulty 4" : 0.3117,
+"Difficulty 5" : 0.3477
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 644.16,
+"weight" :0.04307,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3401,
+"Difficulty 2" :  0.2731,
+"Difficulty 3" : 0.1954,
+"Difficulty 4" : 0.09062,
+"Difficulty 5" : 0.1007
+},
+"right" : {
+"Difficulty 1" : 0.06302,
+"Difficulty 2" : 0.1498,
+"Difficulty 3" : 0.2232,
+"Difficulty 4" : 0.2872,
+"Difficulty 5" : 0.2767
+}
+}
+},
+{
+"feature" : "SECONDS_IN_NONCOMPILE",
+"threshold" : 461.65,
+"weight" :0.04362,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.2772,
+"Difficulty 2" :  0.2617,
+"Difficulty 3" : 0.2196,
+"Difficulty 4" : 0.1322,
+"Difficulty 5" : 0.1093
+},
+"right" : {
+"Difficulty 1" : 0.03588,
+"Difficulty 2" : 0.1112,
+"Difficulty 3" : 0.1969,
+"Difficulty 4" : 0.3103,
+"Difficulty 5" : 0.3456
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 746.71,
+"weight" :0.04149,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3167,
+"Difficulty 2" :  0.2728,
+"Difficulty 3" : 0.2047,
+"Difficulty 4" : 0.1045,
+"Difficulty 5" : 0.1014
+},
+"right" : {
+"Difficulty 1" : 0.05831,
+"Difficulty 2" : 0.139,
+"Difficulty 3" : 0.2181,
+"Difficulty 4" : 0.2922,
+"Difficulty 5" : 0.2924
+}
+}
+},
+{
+"feature" : "SECONDS_IN_NONCOMPILE",
+"threshold" : 461.65,
+"weight" :0.04193,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.2755,
+"Difficulty 2" :  0.261,
+"Difficulty 3" : 0.22,
+"Difficulty 4" : 0.1332,
+"Difficulty 5" : 0.1104
+},
+"right" : {
+"Difficulty 1" : 0.03665,
+"Difficulty 2" : 0.1127,
+"Difficulty 3" : 0.1981,
+"Difficulty 4" : 0.309,
+"Difficulty 5" : 0.3435
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 644.16,
+"weight" :0.03985,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3354,
+"Difficulty 2" :  0.2715,
+"Difficulty 3" : 0.1966,
+"Difficulty 4" : 0.09298,
+"Difficulty 5" : 0.1036
+},
+"right" : {
+"Difficulty 1" : 0.06441,
+"Difficulty 2" : 0.152,
+"Difficulty 3" : 0.2246,
+"Difficulty 4" : 0.2853,
+"Difficulty 5" : 0.2736
+}
+}
+},
+{
+"feature" : "SECONDS_IN_NONCOMPILE",
+"threshold" : 461.65,
+"weight" :0.04039,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.2738,
+"Difficulty 2" :  0.2604,
+"Difficulty 3" : 0.2203,
+"Difficulty 4" : 0.1341,
+"Difficulty 5" : 0.1114
+},
+"right" : {
+"Difficulty 1" : 0.03738,
+"Difficulty 2" : 0.1142,
+"Difficulty 3" : 0.1991,
+"Difficulty 4" : 0.3078,
+"Difficulty 5" : 0.3416
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 746.71,
+"weight" :0.03845,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3125,
+"Difficulty 2" :  0.2713,
+"Difficulty 3" : 0.2057,
+"Difficulty 4" : 0.1067,
+"Difficulty 5" : 0.1038
+},
+"right" : {
+"Difficulty 1" : 0.05978,
+"Difficulty 2" : 0.1412,
+"Difficulty 3" : 0.2195,
+"Difficulty 4" : 0.2902,
+"Difficulty 5" : 0.2894
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 387.5,
+"weight" :0.04065,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.4045,
+"Difficulty 2" :  0.2859,
+"Difficulty 3" : 0.1581,
+"Difficulty 4" : 0.05066,
+"Difficulty 5" : 0.1008
+},
+"right" : {
+"Difficulty 1" : 0.09374,
+"Difficulty 2" : 0.1727,
+"Difficulty 3" : 0.2357,
+"Difficulty 4" : 0.2606,
+"Difficulty 5" : 0.2372
+}
+}
+},
+{
+"feature" : "SECONDS_IN_NONCOMPILE",
+"threshold" : 461.65,
+"weight" :0.03856,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.2714,
+"Difficulty 2" :  0.2599,
+"Difficulty 3" : 0.2209,
+"Difficulty 4" : 0.1351,
+"Difficulty 5" : 0.1127
+},
+"right" : {
+"Difficulty 1" : 0.03837,
+"Difficulty 2" : 0.1159,
+"Difficulty 3" : 0.2,
+"Difficulty 4" : 0.3061,
+"Difficulty 5" : 0.3396
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 304.95,
+"weight" :0.04076,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.4626,
+"Difficulty 2" :  0.2814,
+"Difficulty 3" : 0.135,
+"Difficulty 4" : 0.0392,
+"Difficulty 5" : 0.08182
+},
+"right" : {
+"Difficulty 1" : 0.1058,
+"Difficulty 2" : 0.185,
+"Difficulty 3" : 0.2355,
+"Difficulty 4" : 0.244,
+"Difficulty 5" : 0.2297
+}
+}
+},
+{
+"feature" : "SECONDS_IN_NONCOMPILE",
+"threshold" : 461.65,
+"weight" :0.03743,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.2697,
+"Difficulty 2" :  0.2597,
+"Difficulty 3" : 0.2212,
+"Difficulty 4" : 0.1358,
+"Difficulty 5" : 0.1136
+},
+"right" : {
+"Difficulty 1" : 0.03901,
+"Difficulty 2" : 0.1169,
+"Difficulty 3" : 0.2006,
+"Difficulty 4" : 0.3052,
+"Difficulty 5" : 0.3383
+}
+}
+},
+{
+"feature" : "SECONDS_SPENT",
+"threshold" : 746.71,
+"weight" :0.03552,
+"branch" : {
+"left" : {
+"Difficulty 1" : 0.3074,
+"Difficulty 2" :  0.2706,
+"Difficulty 3" : 0.2072,
+"Difficulty 4" : 0.1086,
+"Difficulty 5" : 0.1062
+},
+"right" : {
+"Difficulty 1" : 0.06144,
+"Difficulty 2" : 0.1433,
+"Difficulty 3" : 0.2203,
+"Difficulty 4" : 0.2881,
+"Difficulty 5" : 0.2869
+}
+}
+}
+]
+}
